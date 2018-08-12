@@ -1,5 +1,6 @@
 import React from 'react'
 import Reveal from 'react-reveal/Reveal';
+import Slide from 'react-reveal/Slide';
 import * as Utils from '../utils'
 import AboutContent from '../contents/about'
 import Scroll from 'react-scroll'
@@ -35,7 +36,6 @@ export default class Education extends React.Component {
               title={this.getEducationTitleComponent(edu.institude)}
               subtitle={this.getEducationSubtitleComponent(edu.degree)}
               createdAt={this.getEducationDateComponent(edu)}
-              style={{background: 'transparent !important'}}
               bubbleStyle={style.education.timeline.bubble}
               icon={this.getEducationIcon()}
             >
@@ -44,9 +44,9 @@ export default class Education extends React.Component {
                 {edu.grade && Object.keys(edu.grade).map(gradeTitle => (
                   <p>
                     {gradeTitle}
-                    <span style={style.education.timeline.badges} class="badge badge-success">{edu.grade[gradeTitle].grade}</span>
+                    <span style={style.education.timeline.badges} className="badge badge-success">{edu.grade[gradeTitle].grade}</span>
                     {edu.grade[gradeTitle].provisional &&
-                      <span style={style.education.timeline.badges} class="badge badge-warning">Provisional</span>
+                      <span style={style.education.timeline.badges} className="badge badge-warning">Provisional</span>
                     }
                   </p>
                 ))}
@@ -94,7 +94,7 @@ export default class Education extends React.Component {
     return (
       <Utils.asPage style={style.education.main} className="bg-light">
         <Reveal>
-          <div  className="container">
+          <div className="container">
             <Scroll.Element name="education">
               <h3> Education </h3>
             </Scroll.Element>

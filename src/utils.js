@@ -1,4 +1,13 @@
 import React from 'react'
+import {
+  faVuejs,
+  faReact,
+  faNode,
+  faAngular,
+  faPython,
+
+} from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import style from './style'
 export const asPage = (props) => {
     return (
@@ -14,4 +23,35 @@ export const myAge = () => {
 export const randomColor = () => {
   const candidates = 'primary,success,danger,warning,info'.split(',')
   return candidates[Math.floor(Math.random() * candidates.length)]
+}
+
+export const getTechIconFromName = (name) => {
+  switch(name.toLowerCase().trim()) {
+    case 'vue': return faVuejs
+    case 'react': return faReact
+    case 'node': return faNode
+    case 'angular': return faAngular
+    case 'python': return faPython
+    default: return null
+  }
+}
+export const getProgressColor = (val) => {
+  if(val >= 90) return 'success'
+  if(val >= 50) return 'info'
+  if(val >= 30) return 'warning'
+  return 'danger'
+}
+export const getTechBadgeFromName = (name,className = '',badgeStyle = {}) => {
+  let icon = getTechIconFromName(name)
+  return (
+    <span style={badgeStyle} className={`badge ${className}`}>
+      {icon &&
+        (
+          <div  style={{paddingLeft: 4,paddingRight: 4}}>
+            <FontAwesomeIcon icon={icon}/>
+          </div>
+        )
+      }
+    </span>
+  )
 }

@@ -13,7 +13,10 @@ export const spaceBetween = {
   display: "flex",
   justifyContent: "space-around"
 }
-
+export const spaceSpread = {
+  display: 'flex',
+  justifyContent: 'space-between'
+}
 export const themeColors = {
   text:   '#fff',
   primary: '#2D3E4F',

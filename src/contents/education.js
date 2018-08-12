@@ -1,9 +1,3 @@
-import React from 'react'
-import style from '../style'
-const bachelorCoursesExcerpt = [
-
-]
-
 export default {
   timeline: [
     {
@@ -73,7 +67,7 @@ export default {
     {
       institude: 'Technical University of Munich',
       degree: 'M.Sc. Informatics',
-      from: '1/10/2015',
+      from: '1/10/2017',
       synopsis: 'Focus on Computer Vision and Machine Learning, as well as software engineering and related application area.',
       courses: [
         {

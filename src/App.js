@@ -32,7 +32,7 @@ import Reveal from 'react-reveal/Reveal';
 import * as Utils from './utils'
 import About from './pages/about'
 import Education from './pages/education'
-
+import Experiences from './pages/experiences'
 // this require....
 const VisibilitySensor = require('react-visibility-sensor')
 
@@ -73,15 +73,21 @@ class App extends Component {
         <Collapse isOpen={this.state.isOpen} navbar className="justify-content-around">
           <Nav navbar>
             <NavItem>
-              <NavLink href="">
-                <Scroll.Link to="about" smooth={true} delay={100}>About</Scroll.Link>
+              <NavLink>
+                <Scroll.Link to="about" offset={-70} smooth={true} delay={100}>About</Scroll.Link>
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="">Education</NavLink>
+              <NavLink>
+                <Scroll.Link to="education" offset={-70} smooth={true} delay={100}> Education</Scroll.Link>
+              </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="">Experiences</NavLink>
+              <NavLink>
+                <Scroll.Link to="experience" offset={-70} smooth={true} delay={100}>
+                  Experience
+                </Scroll.Link>
+              </NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="">Projects</NavLink>
@@ -122,7 +128,7 @@ class App extends Component {
               </div>
             </Reveal>
             <Jump>
-              <Scroll.Link to="about" smooth={true} delay={100}>
+              <Scroll.Link to="about" offset={-70} smooth={true} delay={100}>
                 <div className="bg-light" style={style.cover.bottom}>
                   <FontAwesomeIcon icon={faAngleDoubleDown} size="2x" />
                 </div>
@@ -163,6 +169,7 @@ class App extends Component {
         }
         <About />
         <Education />
+        <Experiences />
       </div>
     );
   }
