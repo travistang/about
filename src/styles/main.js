@@ -1,3 +1,6 @@
+import {columnFlex} from './common'
 export default {
-  fontFamily: "Montserrat"
+  ...columnFlex,
+  fontFamily: "Montserrat",
+
 }

@@ -9,6 +9,7 @@ import {
   faMusic,
   faBasketballBall,
   faDumbbell,
+  faBicycle,
 }from  '@fortawesome/free-solid-svg-icons'
 import {
   Media,
@@ -28,12 +29,12 @@ const hobby = [
     `
   },
   {
-    icon: faPlane,
-    name: "Traveling",
+    icon: faBicycle,
+    name: "Cycling",
     details: `
-      Honestly I would really want to travel more frequently but money is always what hinders me...
-      But when I do I do like traveling alone
-      since it will be a nice opportunity to immerse myself into the culture and environment there.
+      Some time after I live in Munich I realise that travelling with bike within the city is sometimes faster than taking buses - especially when I go gym.
+      That's why since a few months ago I bought a bike and start riding it around. Although I am still a 'beginner' that I may hurt myself once per month by riding it,
+      I will keep riding it as it gives a feeling of speed,freedom and health:) There are
     `
   },
   {
@@ -51,8 +52,9 @@ const hobby = [
     details: `
       I play badminton with my family almost every weekend when I was back in Hong Kong.
       Now since I still can't find anyone who plays badminton here in Germany I also haven't played for a long time and my skills will definitely get rusted a bit.
-      In case you are in Munich and wish to find somebody to play badminton, feel free to contact me:)
-      (p.s. I don't actually have a racket so unfortunately you will have to prepare two for that...)
+      In case you are in Munich and wish to find somebody to play badminton, feel free to contact me!
+      (p.s. I know the icon is a basketball instead of a badminton, I just decided to use it because there's no badminton icon in free version of Font Awesome...
+      Sarcastically basketball is a nightmare for me since my face got hit by one when I was in high school.)
     `
   },
   {
@@ -60,7 +62,7 @@ const hobby = [
     name: 'Gym',
     details: `
       I started to work out at gym since Sep. 2016.
-      I still remember the reason behind is that I saw guys here are much bigger than I do and the only thing I can change to 'minimize such difference' is to workout.
+      I still remember the reason behind is that I realised guys here are much bigger than I do and the only thing I can change to 'minimize such difference' is to workout.
       No matter what the reason was and whether its justifiable or not, now it becomes my hobby and I think it can't be changed in the near future.
     `
   }

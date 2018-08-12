@@ -31,6 +31,8 @@ import Jump from 'react-reveal/Jump';
 import Reveal from 'react-reveal/Reveal';
 import * as Utils from './utils'
 import About from './pages/about'
+import Education from './pages/education'
+
 // this require....
 const VisibilitySensor = require('react-visibility-sensor')
 
@@ -71,7 +73,9 @@ class App extends Component {
         <Collapse isOpen={this.state.isOpen} navbar className="justify-content-around">
           <Nav navbar>
             <NavItem>
-              <NavLink href="">About</NavLink>
+              <NavLink href="">
+                <Scroll.Link to="about" smooth={true} delay={100}>About</Scroll.Link>
+              </NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="">Education</NavLink>
@@ -158,6 +162,7 @@ class App extends Component {
           </Utils.asPage>
         }
         <About />
+        <Education />
       </div>
     );
   }

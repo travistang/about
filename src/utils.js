@@ -2,7 +2,7 @@ import React from 'react'
 import style from './style'
 export const asPage = (props) => {
     return (
-      <div style={style.page}>
+      <div className={props.className} style={{...props.style,...style.page}}>
         {props.children}
       </div>
     )
