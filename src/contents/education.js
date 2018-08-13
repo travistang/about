@@ -12,19 +12,6 @@ export default {
           grade: 'A+'
         },
         {
-          code: 'COMP3711',
-          name: "Design and Analysis of Algorithms",
-        },
-        {
-          code: 'COMP3721',
-          name: "Theory of Computation",
-          grade: 'A-'
-        },
-        {
-          code: 'COMP3111',
-          name: "Software Engineering",
-        },
-        {
           code: 'COMP3311',
           name: "Database Management Systems"
         },
@@ -32,11 +19,6 @@ export default {
           code: "COMP4621",
           name: "	Computer Communication Networks I"
         },
-        {
-          code: "COMP4421",
-          name: "Image Processing",
-          grade: 'A-'
-        }
       ],
       synopsis: 'A 4-year Bachelor degree covering foundamentals of computer science (Informatics)',
       grade: {

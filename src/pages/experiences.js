@@ -26,8 +26,6 @@ export default class Experiences extends React.Component {
           .map(lang => ({[lang]: false}))
       )
     }
-    console.log('state')
-    console.log(this.state)
   }
   getExperienceIcon() {
     return <div className="text-light"><FontAwesomeIcon icon={faSuitcase} /></div>
@@ -77,7 +75,7 @@ export default class Experiences extends React.Component {
     return (
       <div>
         {Object.keys(ExperiencesContent.language).map(lang => (
-          <RubberBand>
+          <Reveal left>
           <Card style={{margin: 16}}>
             <CardBody>
               <div style={style.experiences.language.header}>
@@ -98,17 +96,13 @@ export default class Experiences extends React.Component {
             </CardBody>
 
           </Card>
-          </RubberBand>
+          </Reveal>
         ))}
       </div>
     )
   }
   toggleState(lang) {
-    // console.log('toggle state of')
-    // console.log(lang)
     let newState = {...this.state,[lang]: !this.state[lang]}
-    // console.log('new state')
-    // console.log(newState)
     this.setState(newState)
   }
   getProgrammingSkillsComponent() {

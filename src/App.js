@@ -129,8 +129,8 @@ class App extends Component {
                 <hr className="my-4"/>
                 <Scroll.Element name="top">
                   <VisibilitySensor onChange={this.onCoverInViewChange.bind(this)} />
-                  <h2> Hi. I'm Travis! </h2>
-                  <p> Welcome to my homepage:)</p>
+                  <h2> Hi. I am Travis! </h2>
+                  <p> Welcome to my homepage.</p>
                 </Scroll.Element>
 
                 <hr className="my-4"/>
@@ -210,8 +210,7 @@ class App extends Component {
         // aggregate the data a bit
         let interestingEvents = data.filter(ev => 'PushEvent,CreateEvent,ReleaseEvent'.split(',').indexOf(ev.type) != -1)
           .filter(ev => (new Date() - new Date(ev.created_at)) <= 7 * 86400 * 1000) // within one week
-        console.log('interestingEvents')
-        console.log(interestingEvents)
+
         let dict = {} // stores the frequency
 
         // I want only push event and create event as Release...
