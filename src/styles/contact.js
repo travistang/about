@@ -9,12 +9,13 @@ export default {
     justifyContent: 'left',
     copyright: {
       margin: 4,
-      textAlign: 'right'  
+      textAlign: 'right'
     },
     method: {
       display: 'flex',
+      flex: '0 0 40%',
       margin: 8,
-      width: '40%',
+      // maxWidth: '40%',
       icon: {
         flex: 1,
       },
