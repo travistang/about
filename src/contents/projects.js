@@ -1,17 +1,33 @@
 export default {
   projects: [
     {
+      name: "Deep Learning Course Project",
+      date: "1/2018",
+      onGoing: false,
+      tech: "Keras,OpenAI Gym".split(','),
+      url: 'https://github.com/travistang/IN2346-Porject',
+      synopsis: `
+        This is the project my friend and I worked on for the course Introduction to Deep Learning (IN2346) at TUM.
+        In this project we compare the performance of 3 different neural networks on learning to play Atari games (Breakout),
+        namely, a simple CNN, RNN (LSTM) and the Neural Turing Machine.
+        Our finding is that the simple CNN performs the best (by that I mean it gives the highest score given the same amount of time of training)
+        and one of the explanations is that the other two networks contain much more parameters that they take more time and 'experiences' to learn.
+        This project also features an implementation of NTM with Keras backend from scratch. Which is, for me,
+        a very good practice for building computational graph.
+      `
+    },
+    {
       name: "This Website (About)",
       date: '8/2018',
       onGoing: true,
-      tech: "React,Redux,React-scroll,React-reveal".split(','),
+      tech: "React,React-scroll,React-reveal,".split(','),
       url: "Look at the URL:)",
       synopsis: `
         You read the name right: The project is not called "This website", but this website you're looking at!
         In fact I don't even know how should this website be called, so I will just put it into a repo called "about"
-        so that the URL on GitHub pages can be "***.github.io/travistang/about",
+        so that the URL on GitHub pages can be travistang.github.io/about",
         which suits the purpose of this site!
-        This website has multiple audiences, my friends, my potential employers, and whoever curious about me.
+        This website has multiple audiences, my friends, my potential employers, and whoever finds curious about me.
         It is designed to give you a brief introduction about me, on both technical side and non-technical side.
         It is also used to showcase my frontend development skills:)
       `
@@ -20,7 +36,7 @@ export default {
       name: "MVGDashboard",
       date: '7 / 2018',
       onGoing: true,
-      tech: 'Electron,React,Cheerio'.split(','),
+      tech: 'Electron,React,Redux,Redux-Saga,Cheerio'.split(','),
       url: "https://github.com/travistang/MVGDashboard",
       synopsis: `
         An electron application that displays the departure time and time to destination from your location

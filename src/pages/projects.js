@@ -33,7 +33,7 @@ export default class Projects extends React.Component {
           <CardTitle>{proj.name}
             {'  '}{proj.onGoing? (
               <span className="badge badge-danger">
-                on going
+                ongoing
               </span>
             ):''}
           </CardTitle>
@@ -128,7 +128,7 @@ export default class Projects extends React.Component {
             <Reveal>
               <Scroll.Element name="projects">
                 <h3> Projects </h3>
-                <p> I spend many of my free time building softwares and stuffs - For leisure, for fun, for being useful... for different reasons.
+                <p> I spend much of my free time building softwares and stuffs - For leisure, for fun, for being useful... for different reasons.
                   Some of the projects are listed below.
                 </p>
               </Scroll.Element>

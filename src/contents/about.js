@@ -25,6 +25,7 @@ const hobby = [
     details: `
       As a trivia, I started learning piano since I was 4, so now I should have nominally been playing for ${Utils.myAge() - 4} years...
       But since I haven't played piano for long time, my skills should now be just like a beginner...
+      That's why if you also play piano, there's a very high chance that you play better than I do:)
       As another trivia, I will just play classical music, that's probably because of the pieces I played for the piano exams. And yes, I do like listening and playing them.
     `
   },
@@ -34,7 +35,7 @@ const hobby = [
     details: `
       Some time after I live in Munich I realise that travelling with bike within the city is sometimes faster than taking buses - especially when I go gym.
       That's why since a few months ago I bought a bike and start riding it around. Although I am still a 'beginner' that I may hurt myself once per month by riding it,
-      I will keep riding it as it gives a feeling of speed,freedom and health:) There are
+      I will keep riding it as it gives a feeling of speed,freedom and health:)
     `
   },
   {
@@ -42,8 +43,8 @@ const hobby = [
     name: "Cooking",
     details: `
       I enjoy cooking since my exchange semester at TUM in 2015,
-      when eatting out becomes too luxurious to do regularly (and yes, restaurants in Hong Kong are much more affordable compare to those in Munich...)
-      Over these years my food is getting more delicious (in my opinion...) and I am willing to try to make new dishes from time to time:)
+      when eatting out becomes too luxurious to do regularly (and yes, restaurants in Hong Kong are much more affordable comparing to those in Munich...)
+      Over these years my food is getting more delicious (in my opinion...) and I am willing to try making new dishes from time to time:)
     `
   },
   {
@@ -51,9 +52,9 @@ const hobby = [
     name: "Badminton",
     details: `
       I play badminton with my family almost every weekend when I was back in Hong Kong.
-      Now since I still can't find anyone who plays badminton here in Germany I also haven't played for a long time and my skills will definitely get rusted a bit.
+      But now I haven't played it for a long time since I still can't find anyone who plays it here in Germany.
       In case you are in Munich and wish to find somebody to play badminton, feel free to contact me!
-      (p.s. I know the icon is a basketball instead of a badminton, I just decided to use it because there's no badminton icon in free version of Font Awesome...
+      (By the way, I know the icon is a basketball instead of a badminton, I just decided to use it because there's no badminton icon in free version of Font Awesome...
       Sarcastically basketball is a nightmare for me since my face got hit by one when I was in high school.)
     `
   },
@@ -138,7 +139,7 @@ export default {
           <br/><br/>
           It is very common for Hongkongers to have an unofficial english name and we get used to calling each other with it in every context.
           <br/><br/>
-          That's why I prefer being called <b>Travis</b>. But of course you can call me <b>Yiu Ting</b> if you want since it really is my name and I personally don't care:) But try not to call me both at the same time or I will get confused!
+          That's why I prefer being called <b>Travis</b>. But of course you can call me <b>Yiu Ting</b> if you want since it really is my name and I personally don't care:) Just try not to call me both at the same time or I will get confused!
           </p>
         )
       }
