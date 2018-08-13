@@ -59,14 +59,12 @@ export default class Experiences extends React.Component {
             <div>
               {exp.synopsis && <p>{exp.synopsis}</p>}
               Technologies:
-              <ul style={style.experiences.techList}>
-                {exp.technologies && exp.technologies.map(tech => (
-                  <li>
+              {exp.technologies && exp.technologies.map(tech => (
+                  <span className="badge badge-success" style={style.experiences.techBadge}>
                     {tech}
-                    {Utils.getTechBadgeFromName(tech,'badge-warning',style.experiences.techBadge)}
-                  </li>
-                ))}
-              </ul>
+                  </span>
+              ))}
+
 
             </div>
             </TimelineEvent>

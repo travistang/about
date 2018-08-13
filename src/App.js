@@ -33,6 +33,8 @@ import * as Utils from './utils'
 import About from './pages/about'
 import Education from './pages/education'
 import Experiences from './pages/experiences'
+import Projects from './pages/projects'
+import Contact from './pages/contact'
 // this require....
 const VisibilitySensor = require('react-visibility-sensor')
 
@@ -43,6 +45,10 @@ class App extends Component {
     this.state = {
       isOpen: false,
       isOnCover: true,
+
+      frequencyCount: null,
+      events: null,
+      isLoaded: false,
     }
   }
   toggle() {
@@ -90,10 +96,18 @@ class App extends Component {
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="">Projects</NavLink>
+              <NavLink>
+                <Scroll.Link to="projects" offset={-70} smooth={true} delay={100}>
+                  Projects
+                </Scroll.Link>
+              </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="">Contact</NavLink>
+              <NavLink>
+                <Scroll.Link to="contact" offset={-70} smooth={true} delay={100}>
+                  Contact
+                </Scroll.Link>
+              </NavLink>
             </NavItem>
           </Nav>
         </Collapse>
@@ -121,9 +135,15 @@ class App extends Component {
 
                 <hr className="my-4"/>
                 <div style={style.cover.top.contactList}>
-                  <FontAwesomeIcon icon={faGithub} size="lg"/>
-                  <FontAwesomeIcon icon={faFacebook} size="lg"/>
-                  <FontAwesomeIcon icon={faLinkedin} size="lg"/>
+                  <a href="https://github.com/travistang">
+                    <FontAwesomeIcon icon={faGithub} size="lg"/>
+                  </a>
+                  <a href="https://www.facebook.com/yiutingtangtravis">
+                    <FontAwesomeIcon icon={faFacebook} size="lg"/>
+                  </a>
+                  <a href="https://www.linkedin.com/in/travis-tang-08289074/">
+                    <FontAwesomeIcon icon={faLinkedin} size="lg"/>
+                  </a>
                 </div>
               </div>
             </Reveal>
@@ -170,6 +190,8 @@ class App extends Component {
         <About />
         <Education />
         <Experiences />
+        <Projects {...this.state} />
+        <Contact />
       </div>
     );
   }
@@ -180,6 +202,47 @@ class App extends Component {
   componentDidMount() {
     // register, register, register...
     window.addEventListener('resize',this.getWindowDimension.bind(this))
+    fetch('https://api.github.com/users/travistang/events')
+      .then(response => response.json())
+      .then(data => {
+        let dateToString =  Utils.dateToString
+        let avatar = data[0].actor.avatar_url
+        // aggregate the data a bit
+        let interestingEvents = data.filter(ev => 'PushEvent,CreateEvent,ReleaseEvent'.split(',').indexOf(ev.type) != -1)
+          .filter(ev => (new Date() - new Date(ev.created_at)) <= 7 * 86400 * 1000) // within one week
+        console.log('interestingEvents')
+        console.log(interestingEvents)
+        let dict = {} // stores the frequency
+
+        // I want only push event and create event as Release...
+        interestingEvents.forEach((ev) => {
+          let dateKey = dateToString(ev.created_at)
+          let activityCount = ev.type == "PushEvent"?ev.payload.commits.length:1 // the rest count as one only...
+
+          if(!dict[dateKey]) dict[dateKey] = 0
+          dict[dateKey] += activityCount
+
+        })
+        // prepare
+        let numCommitOfDate = (date) => {
+          let dateString = dateToString(date)
+          let ind = Object.keys(dict).sort((a,b) => new Date(a) - new Date(b)).indexOf(dateString)
+          if(ind < 0) return 0 // no commits on this day
+          else return dict[dateString]
+        }
+        let startDate = new Date() - 6 * 86400 * 1000 // lets start from one week ago...
+        // but why 6? becuase today (new Date() - 0 * 86400 * 1000 = new Date()) counts!
+        let freqCount = []
+        for(let i = 0; i < 7; i++) {
+          freqCount.push(numCommitOfDate(startDate + i * 86400 * 1000))
+        }
+
+        // now just prepare for the event list, then we're good to go!
+        this.setState({...this.state,frequencyCount: freqCount,events: interestingEvents,isLoaded: true})
+      })
+      .catch(e => {
+        this.setState({...this.state,isLoaded: true,frequencyCount: null,events: null})
+      })
   }
 }
 

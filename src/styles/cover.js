@@ -1,4 +1,5 @@
 import {centerContent,columnFlex,spaceBetween} from './common'
+const avatarPath = require('../contents/imgs/avatar.JPG')
 export default {
   ...centerContent,
   ...columnFlex,
@@ -10,8 +11,11 @@ export default {
     avatar: {
       height: "25vw",
       width: "25vw",
-      background: "white",
+      // background: "white",
       borderRadius: "15vw",
+      backgroundImage: `url(${avatarPath})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover'
     },
     contactList: {
       ...spaceBetween,

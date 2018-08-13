@@ -104,10 +104,10 @@ class HobbyComponent extends React.Component {
 export default {
     synopsis: (
       <p>
-        I am Travis, a ${Utils.myAge()}-year-old guy from Hong Kong. Current I am doing my Master's degree in Informatics at Technical University of Munich. I will be doing my third semester in Oct 2018.
+        I am Travis, a {Utils.myAge()}-year-old guy from Hong Kong. Currently I am doing my Master's degree in Informatics at Technical University of Munich. I will be doing my third semester in Oct 2018.
         <br />
         I have a wide range of interest. From web development to mobile application development, machine learning (deep learning in particular),
-        networking, IoT (such as with Raspberry Pi, Arduino, ESP8266...), modeling and simulation, quadcopters... These are all in which I have motivation to investigate and work on.
+        networking, IoT (such as with Raspberry Pi, Arduino, ESP8266...), modeling and simulation, quadcopters... These are all in which I have motivation to learn and work on.
         My goal is to combine the best out of these fields into a few projects, that people can get the most out of it.
       </p>
     ),
@@ -131,14 +131,14 @@ export default {
         content:
         (
           <p style={style.about.text}>
-          Well, I have come across this question many times here in Munich.
+          Well, I have come across this question many times since I'm in Munich.
           <br/><br/>
           <b>Travis</b> is my nickname that all friends of mine call but it never exists in any offical documents.
-          <b>Yiu Ting</b> is the name that appears on my passport / IDs but nobody except my parents call me so.
+            <b>Yiu Ting</b> is the name that appears on my passport / IDs but nobody except my parents call me so.
           <br/><br/>
           It is very common for Hongkongers to have an unofficial english name and we get used to calling each other with it in every context.
           <br/><br/>
-          That's why I prefer being called <b>Travis</b>. But of course you can call me <b>Yiu Ting</b> if you want since it really is my name and I personally don't care:) But try not to call me both at the same time or I will get confused:)
+          That's why I prefer being called <b>Travis</b>. But of course you can call me <b>Yiu Ting</b> if you want since it really is my name and I personally don't care:) But try not to call me both at the same time or I will get confused!
           </p>
         )
       }

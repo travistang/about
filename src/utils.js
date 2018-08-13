@@ -55,3 +55,12 @@ export const getTechBadgeFromName = (name,className = '',badgeStyle = {}) => {
     </span>
   )
 }
+
+export const dateToString = (dateString) => {
+  let date = new Date(dateString)
+  let year = date.getFullYear()
+  let month = date.getMonth() + 1
+  let day = date.getDate()
+
+  return `${month}/${day}/${year}` // why should month go first!?!?!?
+}
