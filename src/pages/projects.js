@@ -135,13 +135,13 @@ export default class Projects extends React.Component {
             </Reveal>
             <Container>
               <Row>
-                <Col sm={7}>
+                <Col lg={7}>
                   {
                     this.getProjects()
                   }
                 </Col>
 
-                <Col sm={5}>
+                <Col lg={5}>
                   <Card color="success" inverse body style={{margin: 16}}>
 
 
