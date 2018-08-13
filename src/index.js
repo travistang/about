@@ -5,11 +5,19 @@ import App from './containers/App';
 import registerServiceWorker from './registerServiceWorker';
 import store from './store/index';
 import { Provider } from "react-redux";
-import { BrowserRouter } from 'react-router-dom'
+import CV from './pages/CV'
+import { BrowserRouter ,Route,Switch } from 'react-router-dom'
 ReactDOM.render(
   (
     <Provider store={store}>
-      <App />
+      <BrowserRouter>
+        <Switch>
+          <Route path="/cv" component={CV} />
+          <Route path="/*" component={App} />
+        </Switch>
+
+
+      </BrowserRouter>
     </Provider>
   ),
    document.getElementById('root'));

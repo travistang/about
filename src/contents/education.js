@@ -9,7 +9,6 @@ export default {
         {
           code: 'COMP2012',
           name: 'Object-Oriented Programming and Data Structures',
-          grade: 'A+'
         },
         {
           code: 'COMP3311',
@@ -21,9 +20,6 @@ export default {
         },
       ],
       synopsis: 'A 4-year Bachelor degree covering foundamentals of computer science (Informatics)',
-      grade: {
-        'Final CGA:': {grade: '3.23 / 4.3',provisional: false}
-      },
       thesis: {
         'Image-based Reinforcement Learning for Autonomous Vechicles':
         'https://www.cse.ust.hk/ug/fyp/posters/gallery/2017/1920x/2016-2017_COMP_4_CK1.jpg'
@@ -63,7 +59,6 @@ export default {
         {
           code: "IN2305",
           name: "Cyber-Physical Systems",
-          grade: '1.3'
         },
         {
           code: "IN2354",
@@ -74,9 +69,6 @@ export default {
           name: "Software Engineering for Business Application - Web Application Engineering"
         }
       ],
-      grade: {
-        'Grade:': {grade: '2.1', provisional: true}
-      }
     }
   ]
 }

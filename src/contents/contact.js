@@ -11,12 +11,12 @@ export default {
     {
       method: 'github',
       detail: 'travistang',
-      url: 'https://github.com/travistang'
+      url: 'github.com/travistang'
     },
     {
       method: 'facebook',
       detail: 'Travis Tang',
-      url: 'https://www.facebook.com/yiutingtangtravis'
+      url: 'www.facebook.com/yiutingtangtravis'
     }
   ]
 }

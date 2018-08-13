@@ -4,8 +4,10 @@ export default {
       name: "Deep Learning Course Project",
       date: "1/2018",
       onGoing: false,
+      includeInCV: true,
       tech: "Keras,OpenAI Gym".split(','),
       url: 'https://github.com/travistang/IN2346-Porject',
+      cvSynopsis: `NTM implementation with Keras Backend`,
       synopsis: `
         This is the project my friend and I worked on for the course Introduction to Deep Learning (IN2346) at TUM.
         In this project we compare the performance of 3 different neural networks on learning to play Atari games (Breakout),
@@ -18,10 +20,13 @@ export default {
     },
     {
       name: "This Website (About)",
+      cvName: "Personal website",
       date: 'Aug 2018',
       onGoing: true,
+      includeInCV: true,
       tech: "React,React-scroll,React-reveal,".split(','),
       url: "Look at the URL.",
+      cvUrl: "travistang.github.io/about/",
       synopsis: `
         You read the name right: The project is not called "This website", but this website you're looking at!
         In fact I don't even know how should this website be called, so I will just put it into a repo called "about"
@@ -30,12 +35,16 @@ export default {
         This website has multiple audiences, my friends, my potential employers, and whoever finds curious about me.
         It is designed to give you a brief introduction about me, on both technical side and non-technical side.
         It is also used to showcase my frontend development skills.
+      `,
+      cvSynopsis: `
+        A personal website written in React
       `
     },
     {
       name: "MVGDashboard",
       date: 'Jul 2018',
       onGoing: true,
+      includeInCV: true,
       tech: 'Electron,React,Redux,Redux-Saga,Cheerio'.split(','),
       url: "https://github.com/travistang/MVGDashboard",
       synopsis: `
@@ -45,12 +54,16 @@ export default {
         I plan to integrate other features to make it even more personalized.
         Details are unfortunately a secret for now,
         but you will definitely see in the future.
+      `,
+      cvSynopsis: `
+        A realtime dashboard written in React, Redux and Redux-Saga
       `
     },
     {
       name: 'wg-crawler',
       date: 'Sep 2017',
       onGoing: false,
+      includeInCV: false,
       tech: 'Scrapy,Crontab,Parse.js'.split(','),
       url: 'https://github.com/travistang/wg-crawler',
       synopsis: `
@@ -67,6 +80,7 @@ export default {
       date: 'Mar 2018',
       tech: 'Ionic 2,Express,Docker,Kue,MongoDB,RabbitMQ,Youtube-dl'.split(','),
       onGoing: true,
+      includeInCV: false,
       url: "https://github.com/travistang/YoutubeDownloader",
       synopsis: `
         Another piece of work that challenges the TOS .
@@ -81,6 +95,7 @@ export default {
       name: "PasswordManager",
       date: 'Nov 2017',
       onGoing: false,
+      includeInCV: false,
       tech: "Vue.js,Nuxt.js,Parse,Docker".split(','),
       url: "https://github.com/travistang/pwmanager",
       synopsis: `

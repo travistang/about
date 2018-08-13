@@ -55,7 +55,6 @@ export const getTechBadgeFromName = (name,className = '',badgeStyle = {}) => {
     </span>
   )
 }
-
 export const dateToString = (dateString) => {
   let date = new Date(dateString)
   let year = date.getFullYear()
