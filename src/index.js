@@ -13,6 +13,7 @@ ReactDOM.render(
       <BrowserRouter>
         <Switch>
           <Route path="/cv" component={CV} />
+          <Route path="/about/cv" component={CV} /> {/* the 'about' is due to the repo name on GitHub.. */}
           <Route path="/*" component={App} />
         </Switch>
 
