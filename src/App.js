@@ -150,11 +150,13 @@ class App extends Component {
                     </a>
                   </div>
                   */
+                  /*
+                  <Button size='lg' href="cv" color="primary">
+                     Get my CV
+                  </Button>
+                  */
                 }
-                <Button size='lg' href="cv" color="primary">
-                  {/*<FontAwesomeIcon icon={faArrowDown} />*/}
-                   Get my CV
-                </Button>
+
               </div>
             </Reveal>
             <Jump>
