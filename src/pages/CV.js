@@ -87,7 +87,7 @@ export default class CV extends React.Component {
         <div style={style.left.info.avatar}>
         </div>
         <h4 className="text-light"> Tang, Yiu Ting </h4>
-        <p className="text-dark">  B.Eng. in Computer Science </p>
+        <p className="text-dark">  Master's student in Informatics </p>
         {this.infoSection()}
         {this.contactSection()}
       </div>

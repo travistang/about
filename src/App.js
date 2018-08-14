@@ -10,7 +10,8 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
+  Button,
 } from 'reactstrap';
 
 import style from './style'
@@ -22,7 +23,8 @@ import { fab,
 } from '@fortawesome/free-brands-svg-icons'
 
 import {
-  faAngleDoubleDown
+  faAngleDoubleDown,
+  faArrowDown,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as Scroll from 'react-scroll';
@@ -134,17 +136,25 @@ class App extends Component {
                 </Scroll.Element>
 
                 <hr className="my-4"/>
-                <div style={style.cover.top.contactList}>
-                  <a href="https://github.com/travistang">
-                    <FontAwesomeIcon icon={faGithub} size="lg"/>
-                  </a>
-                  <a href="https://www.facebook.com/yiutingtangtravis">
-                    <FontAwesomeIcon icon={faFacebook} size="lg"/>
-                  </a>
-                  <a href="https://www.linkedin.com/in/travis-tang-08289074/">
-                    <FontAwesomeIcon icon={faLinkedin} size="lg"/>
-                  </a>
-                </div>
+                {
+                  /*
+                  <div style={style.cover.top.contactList}>
+                    <a href="https://github.com/travistang">
+                      <FontAwesomeIcon icon={faGithub} size="lg"/>
+                    </a>
+                    <a href="https://www.facebook.com/yiutingtangtravis">
+                      <FontAwesomeIcon icon={faFacebook} size="lg"/>
+                    </a>
+                    <a href="https://www.linkedin.com/in/travis-tang-08289074/">
+                      <FontAwesomeIcon icon={faLinkedin} size="lg"/>
+                    </a>
+                  </div>
+                  */
+                }
+                <Button size='lg' href="/cv" color="primary">
+                  {/*<FontAwesomeIcon icon={faArrowDown} />*/}
+                   Get my CV
+                </Button>
               </div>
             </Reveal>
             <Jump>

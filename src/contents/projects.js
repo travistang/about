@@ -7,7 +7,7 @@ export default {
       includeInCV: true,
       tech: "Keras,OpenAI Gym".split(','),
       url: 'https://github.com/travistang/IN2346-Porject',
-      cvSynopsis: `NTM implementation with Keras Backend`,
+      cvSynopsis: `Neural Turing Machine implementation with Keras Backend`,
       synopsis: `
         This is the project my friend and I worked on for the course Introduction to Deep Learning (IN2346) at TUM.
         In this project we compare the performance of 3 different neural networks on learning to play Atari games (Breakout),
