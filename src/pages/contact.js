@@ -51,7 +51,7 @@ export default class Contact extends React.Component {
                       </div>
                       <div style={style.contact.container.method.detail}>
                         {method.url?(
-                          <a href={method.url}>{method.detail}</a>
+                          <a href={method.fullURL || method.url}>{method.detail}</a>
                         ):method.detail}
                       </div>
                     </div>
