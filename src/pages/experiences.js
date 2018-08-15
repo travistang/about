@@ -30,26 +30,20 @@ export default class Experiences extends React.Component {
   getExperienceIcon() {
     return <div className="text-light"><FontAwesomeIcon icon={faSuitcase} /></div>
   }
-  getExperienceTitleComponent(title) {
-    return <h4>{title}</h4>
+  getExperienceTitleComponent(exp) {
+    return <h4>{exp.role}</h4>
   }
   getExperienceSubtitleComponent(exp) {
-    return <h5>{exp.nature} - {exp.role} </h5>
+    return <h6>{exp.company} • {exp.nature} • {exp.date} </h6>
   }
-  getExperienceDateComponent(edu) {
-    return (
-      <p>
-        {edu.from}
-      </p>
-    )
-  }
+
   getTimeline() {
     return (
       <Timeline orientation="right" lineStyle={style.education.timeline.line}>
         {
           ExperiencesContent.timeline.map(exp => (
             <TimelineEvent
-              title={this.getExperienceTitleComponent(exp.company)}
+              title={this.getExperienceTitleComponent(exp)}
               subtitle={this.getExperienceSubtitleComponent(exp)}
               bubbleStyle={style.education.timeline.bubble}
               icon={this.getExperienceIcon()}

@@ -103,7 +103,7 @@ export default class Projects extends React.Component {
               <ListGroupItem className="bg-success" inverse onClick={() => {window.open(url,'_blank');return false;}}>
                 {title}
                 <div style={style.projects.activity.item}>
-                  <p> {dateString} </p>
+                  <p> {Utils.mmddYYYY2ddmmYYYY(dateString)} </p>
                   <FontAwesomeIcon icon={this.getActivityIcon(ev.type)} size='1x'/>
                 </div>
 

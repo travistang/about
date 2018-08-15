@@ -63,3 +63,9 @@ export const dateToString = (dateString) => {
 
   return `${month}/${day}/${year}` // why should month go first!?!?!?
 }
+
+export const mmddYYYY2ddmmYYYY = (mmddYYYY) => {
+  let parts = mmddYYYY.split('/')
+  if(parts.length != 3) return ''
+  return `${parts[1]}/${parts[0]}/${parts[2]}`
+}
