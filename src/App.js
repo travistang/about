@@ -48,8 +48,11 @@ class App extends Component {
       isOpen: false,
       isOnCover: true,
 
+      avatar: null,
       frequencyCount: null,
       events: null,
+      // flag indicate whether the API has been called or not,
+      // if its true but the attrs above is null, then you know theres an error...
       isLoaded: false,
     }
   }
@@ -249,10 +252,15 @@ class App extends Component {
         }
 
         // now just prepare for the event list, then we're good to go!
-        this.setState({...this.state,frequencyCount: freqCount,events: interestingEvents,isLoaded: true})
+        this.setState({...this.state,
+          avatar,
+          frequencyCount: freqCount,
+          events: interestingEvents,
+          isLoaded: true
+        })
       })
       .catch(e => {
-        this.setState({...this.state,isLoaded: true,frequencyCount: null,events: null})
+        this.setState({...this.state,isLoaded: true,avatar: null,frequencyCount: null,events: null})
       })
   }
 }

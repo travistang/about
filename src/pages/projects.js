@@ -7,16 +7,23 @@ import AboutContent from '../contents/about'
 import Scroll from 'react-scroll'
 import RubberBand from 'react-reveal/RubberBand';
 import style from '../style'
+import {centerContent} from '../styles/common'
 import {Timeline, TimelineEvent} from 'react-event-timeline'
 import ProjectsContent from '../contents/projects'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faSuitcase,faExclamationTriangle,faCodeBranch,faCode} from '@fortawesome/free-solid-svg-icons'
+import {
+  faSuitcase,faExclamationTriangle,faCodeBranch,faCode,
+  faArrowDown,faArrowUp,faEllipsisH
+} from '@fortawesome/free-solid-svg-icons'
 import Trend from 'react-trend';
 import {
+   Button,
    Container,
    Row,
    Col,
+   Collapse,
    Card,
+   CardFooter,
    CardBody,
    CardTitle,
    CardSubtitle,
@@ -25,11 +32,31 @@ import {
    ListGroupItem
 } from 'reactstrap';
 export default class Projects extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      isActivityOpen: false,
+      // flag indicating if each project is open
+      projectsOpen: Object.assign(...ProjectsContent.projects.map(proj => ({[proj.name]:false})))
+    }
+  }
+  toggle(flag){
+    this.setState({...this.state,[flag]:!this.state[flag]})
+  }
+  toggleProjectsOpen(projName) {
+    this.setState({
+      ...this.state,
+      projectsOpen: {
+        ...this.state.projectsOpen,
+        [projName]:!this.state.projectsOpen[projName]
+      }
+    })
+  }
   getProjects() {
     return ProjectsContent.projects.map(proj => (
       <Zoom>
-      <Card onClick={() => {window.open(proj.url,'_blank');return false;}} style={{margin: 16}} body color="primary" inverse>
-        <CardBody>
+      <Card style={{margin: 16}} body color="primary" inverse>
+        <CardBody onClick={() => {window.open(proj.url,'_blank');return false;}} >
           <CardTitle>{proj.name}
             {'  '}{proj.onGoing? (
               <span className="badge badge-danger">
@@ -45,10 +72,19 @@ export default class Projects extends React.Component {
                 {tech}
               </span>
             ))) || null}
-            <CardText>
-              <div style={{textAlign: 'justify'}}>{proj.synopsis}</div>
-            </CardText>
+            <Collapse isOpen={this.state.projectsOpen[proj.name]}>
+              <CardText>
+                <div style={{textAlign: 'justify'}}>{proj.synopsis}</div>
+              </CardText>
+            </Collapse>
         </CardBody>
+        <CardFooter style={{...centerContent}} onClick={this.toggleProjectsOpen.bind(this,proj.name)}>
+          <div>
+            <FontAwesomeIcon
+              size="2x"
+              icon={this.state.projectsOpen[proj.name]?faArrowUp:faEllipsisH}/>
+          </div>
+        </CardFooter>
       </Card>
       </Zoom>
     ))
@@ -77,6 +113,16 @@ export default class Projects extends React.Component {
     // it is loaded!
     return (
       <div>
+        <a className="text-light" target="_blank" href="https://github.com/travistang">
+          <div style={style.projects.activity.profile}>
+            <div style={style.projects.activity.profile.icon}>
+              <div style={{...style.projects.activity.profile.icon.inner,backgroundImage: `url(${this.props.avatar})`}} />
+            </div>
+            <div style={style.projects.activity.profile.name}>
+              travistang
+            </div>
+          </div>
+        </a>
         <Trend
           gradient={['#fff','#fff']}
           smooth={true}
@@ -89,29 +135,32 @@ export default class Projects extends React.Component {
           data={this.props.frequencyCount}
         />
         <ListGroup color="light" flush>
-          {this.props.events.map(ev => {
-            let action
-            if(ev.type == 'PushEvent') action = 'Pushed to'
-            if(ev.type == 'CreateEvent') action = 'Created'
-            if(ev.type == 'ReleasedEvent') action = 'Released a version of'
-            if(!action) return null // what is this??
-            let title = <p>{action} repository <b>{ev.repo.name.split('/')[1]}</b></p>
-            let url = 'https://github.com/' + ev.repo.name // lol...
-            let dateString = Utils.dateToString(ev.created_at)
-            return (
-              <Reveal bottom>
-              <ListGroupItem className="bg-success" inverse onClick={() => {window.open(url,'_blank');return false;}}>
-                {title}
-                <div style={style.projects.activity.item}>
-                  <p> {Utils.mmddYYYY2ddmmYYYY(dateString)} </p>
-                  <FontAwesomeIcon icon={this.getActivityIcon(ev.type)} size='1x'/>
-                </div>
+          <Collapse isOpen={this.state.isActivityOpen}>
+            {this.props.events.map(ev => {
+              let action
+              if(ev.type == 'PushEvent') action = 'Pushed to'
+              if(ev.type == 'CreateEvent') action = 'Created'
+              if(ev.type == 'ReleasedEvent') action = 'Released a version of'
+              if(!action) return null // what is this??
+              let title = <p>{action} repository <b>{ev.repo.name.split('/')[1]}</b></p>
+              let url = 'https://github.com/' + ev.repo.name // lol...
+              let dateString = Utils.dateToString(ev.created_at)
+              return (
+                <Reveal bottom>
+                <ListGroupItem className="bg-success" inverse onClick={() => {window.open(url,'_blank');return false;}}>
+                  {title}
+                  <div style={style.projects.activity.item}>
+                    <p> {Utils.mmddYYYY2ddmmYYYY(dateString)} </p>
+                    <FontAwesomeIcon icon={this.getActivityIcon(ev.type)} size='1x'/>
+                  </div>
 
-              </ListGroupItem>
-              </Reveal>
-            )
-          })}
+                </ListGroupItem>
+                </Reveal>
+              )
+            })}
+          </Collapse>
         </ListGroup>
+
       </div>
 
     )
@@ -151,7 +200,13 @@ export default class Projects extends React.Component {
                       {
                         this.props.isLoaded?this.activityComponent():this.loadingComponent()
                       }
-
+                      <CardFooter style={{...centerContent}}>
+                        <div onClick={this.toggle.bind(this,'isActivityOpen')}>
+                          <FontAwesomeIcon
+                            size="2x"
+                            icon={this.state.isActivityOpen?faArrowUp:faEllipsisH}/>
+                        </div>
+                      </CardFooter>
 
                   </Card>
 
