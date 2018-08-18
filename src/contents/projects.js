@@ -22,10 +22,10 @@ export default {
       name: "This Website (About)",
       cvName: "Personal website",
       date: 'Aug 2018',
-      onGoing: true,
+      onGoing: false,
       includeInCV: true,
       tech: "React,React-scroll,React-reveal,".split(','),
-      url: "Look at the URL.",
+      url: "https://travistang.github.io/about/",
       cvUrl: "travistang.github.io/about/",
       synopsis: `
         You read the name right: The project is not called "This website", but this website you're looking at!

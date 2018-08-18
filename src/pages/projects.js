@@ -139,7 +139,7 @@ export default class Projects extends React.Component {
             {this.props.events.map(ev => {
               let action
               if(ev.type == 'PushEvent') action = 'Pushed to'
-              if(ev.type == 'CreateEvent') action = 'Created'
+              if(ev.type == 'CreateEvent') action = 'Created / Added a branch to'
               if(ev.type == 'ReleasedEvent') action = 'Released a version of'
               if(!action) return null // what is this??
               let title = <p>{action} repository <b>{ev.repo.name.split('/')[1]}</b></p>
