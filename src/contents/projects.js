@@ -64,7 +64,7 @@ export default {
       date: 'Sep 2017',
       onGoing: false,
       includeInCV: false,
-      tech: 'Scrapy,Crontab,Parse.js'.split(','),
+      tech: 'Scrapy,Crontab,Parse'.split(','),
       url: 'https://github.com/travistang/wg-crawler',
       synopsis: `
         A web scraper that periodically visit some housing ads websites,

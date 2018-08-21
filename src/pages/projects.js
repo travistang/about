@@ -123,17 +123,19 @@ export default class Projects extends React.Component {
             </div>
           </div>
         </a>
-        <Trend
-          gradient={['#fff','#fff']}
-          smooth={true}
-          radius={8}
-          strokeWidth={6}
-          padding={16}
-          autoDraw
-          autoDrawDuration={1500}
-          autoDrawEasing="ease-in"
-          data={this.props.frequencyCount}
-        />
+	<div>
+		<Trend
+		  gradient={['#fff','#fff']}
+		  smooth={true}
+		  radius={8}
+		  strokeWidth={6}
+		  padding={16}
+		  autoDraw
+		  autoDrawDuration={1500}
+		  autoDrawEasing="ease-in"
+		  data={this.props.frequencyCount}
+		/>
+	</div>
         <ListGroup color="light" flush>
           <Collapse isOpen={this.state.isActivityOpen}>
             {this.props.events.map(ev => {
