@@ -62,7 +62,7 @@ export default class Contact extends React.Component {
             </div>
             <div style={style.contact.container.copyright}>
               Copyright <FontAwesomeIcon icon={faCopyright}/> 2018 Tang Yiu Ting. All rights reserved.
-
+		<a href="https://www.iubenda.com/privacy-policy/77487588"> Privacy Policy </a>
             </div>
           </Scroll.Element>
         </div>
