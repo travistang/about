@@ -15,7 +15,7 @@ import {
 } from 'reactstrap';
 
 import style from './style'
-// import { library } from '@fortawesome/fontawesome-svg-core'
+import './App.css'
 import { fab,
   faGithub,
   faFacebook,
@@ -83,31 +83,31 @@ class App extends Component {
         <NavbarToggler onClick={this.toggle.bind(this)} />
         <Collapse isOpen={this.state.isOpen} navbar className="justify-content-around">
           <Nav navbar>
-            <NavItem>
+            <NavItem className="navLinkHover">
               <NavLink>
                 <Scroll.Link to="about" offset={-70} smooth={true} delay={100}>About</Scroll.Link>
               </NavLink>
             </NavItem>
-            <NavItem>
+            <NavItem className="navLinkHover">
               <NavLink>
                 <Scroll.Link to="education" offset={-70} smooth={true} delay={100}> Education</Scroll.Link>
               </NavLink>
             </NavItem>
-            <NavItem>
+            <NavItem className="navLinkHover">
               <NavLink>
                 <Scroll.Link to="experience" offset={-70} smooth={true} delay={100}>
                   Experience
                 </Scroll.Link>
               </NavLink>
             </NavItem>
-            <NavItem>
+            <NavItem className="navLinkHover">
               <NavLink>
                 <Scroll.Link to="projects" offset={-70} smooth={true} delay={100}>
                   Projects
                 </Scroll.Link>
               </NavLink>
             </NavItem>
-            <NavItem>
+            <NavItem className="navLinkHover">
               <NavLink>
                 <Scroll.Link to="contact" offset={-70} smooth={true} delay={100}>
                   Contact
