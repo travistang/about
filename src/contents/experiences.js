@@ -55,12 +55,28 @@ export default {
   },
   timeline: [
     {
-      company: 'Smokeless',
-      nature: 'Working Student',
+      company: 'Technical University of Munich',
+      nature: 'Part time',
+      role: 'Research Assistant - Full Stack Developer',
+      date: '1/1/2019',
+      technologies: "Express.js,Mongoose,React.js".split(','),
+      synopsis: "My task is to develop a web platform that enables politicians and students to communicate and participate in different project."
+    },
+    {
+      company: 'Technical University of Munich',
+      nature: 'Part time',
+      role: 'Research Assistant (HiWi)',
+      date: '1/10/2018',
+      technologies: 'Flask,ESP8266,Raspberry Pi, Micropython'.split(','),
+      synopsis: "My task is to set up a Web of Things (WoT) network in which devices submit their \"Thing Description\" (TD) that describes their functionalities and API endpoints to access them."
+    },
+    {
+      company: 'AforApp',
+      nature: 'Part time',
       role: 'App Developer',
-      date: '1/1/2018',
-      technologies: 'Vue,Cordova'.split(','),
-      synopsis: 'I am responsible for developing a hybrid application for the clinical trial participants of the test conducted by this company',
+      date: '1/5/2018',
+      technologies: 'Angular,Ionic,Firebase'.split(','),
+      synopsis: 'I need to develop two applications that depends on each other for a start up with AirBnb-like business model. Ionic 2 is used to develop the 2 apps.'
     },
     {
       company: 'Masterson',
@@ -71,12 +87,12 @@ export default {
       synopsis: "My task is to develop 2 dashboards that displays JSON data from a given API within 3 weeks. Vue is chosen to complete this task."
     },
     {
-      company: 'AforApp',
-      nature: 'Part time',
+      company: 'Smokeless',
+      nature: 'Working Student',
       role: 'App Developer',
-      date: '1/5/2018',
-      technologies: 'Angular,Ionic,Firebase'.split(','),
-      synopsis: 'I need to develop two applications that depends on each other for a start up with AirBnb-like business model. Ionic 2 is used to develop the 2 apps.'
-    }
+      date: '1/1/2018',
+      technologies: 'Vue,Cordova'.split(','),
+      synopsis: 'I am responsible for developing a hybrid application for the clinical trial participants of the test conducted by this company',
+    },
   ]
 }
